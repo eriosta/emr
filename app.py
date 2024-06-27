@@ -9,8 +9,8 @@ import toml
 config = toml.load("config.toml")
 
 # Access the API key
-api_key = config["credentials"]["api_key"]
-form_id = config["credentials"]["form_id"]
+api_key = st.secrets["credentials"]["api_key"]
+form_id = st.secrets["credentials"]["form_id"]
 
 client = jotform.JotformAPIClient(api_key)
 
