@@ -3,13 +3,16 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import jotform
-import os
+import toml
 
-api_key = os.environ['JOTFORM_API_KEY']
+# Load the configuration file
+config = toml.load("config.toml")
+
+# Access the API key
+api_key = config["credentials"]["api_key"]
+form_id = config["credentials"]["form_id"]
 
 client = jotform.JotformAPIClient(api_key)
-
-form_id = '241235531611142'
 
 # Number of submissions to exclude
 exclude_count = 25
