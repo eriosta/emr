@@ -5,8 +5,6 @@ import numpy as np
 import jotform
 import toml
 
-# Load the configuration file
-config = toml.load("config.toml")
 
 # Access the API key
 api_key = st.secrets["credentials"]["api_key"]
